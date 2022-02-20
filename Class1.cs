@@ -4,17 +4,17 @@ using BepInEx.Logging;
 using DiskCardGame;
 using HarmonyLib;
 
-namespace GoatSigilAlwaysBoneLord;
+namespace GoatSigilFix;
 
 [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
 public class GoatSigilFix : BaseUnityPlugin
 {
     private const string PluginName = "GoatSigilFix";
     private const string PluginGuid = "fmpreferences.goatfix";
-    private const string PluginVersion = "1.0.0";
+    private const string PluginVersion = "1.1.0";
 
     internal static ManualLogSource PluginLogger;
-    internal static bool allowTransfers;
+    internal static bool AllowTransfers;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class GoatSigilFix : BaseUnityPlugin
 
         var h = new Harmony(PluginGuid);
 
-        allowTransfers = Config.Bind(PluginName, "allowTransferredSigils", true,
+        AllowTransfers = Config.Bind(PluginName, "allowTransferredSigils", true,
                 new ConfigDescription("Will give bone lord boon even if the sigil is transferred via sacrifice"))
             .Value;
 
@@ -57,8 +57,8 @@ public class CanIAddGoat
             if (!card.traits.Contains(Trait.Goat))
                 card.traits.Add(Trait.Goat);
 
-        if (!GoatSigilFix.allowTransfers) return;
-        
+        if (!GoatSigilFix.AllowTransfers) return;
+
         List<CardInfo> transferredGoats =
             deckInfo.Cards.FindAll(card => card.ModAbilities.Contains(Ability.TripleBlood));
         foreach (var card in transferredGoats)
