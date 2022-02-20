@@ -10,7 +10,7 @@ public class GoatSigilFix : BaseUnityPlugin
 {
     private const string PluginName = "Goat Sigil Fix";
     private const string PluginGuid = "fmpreferences.goatfix";
-    private const string PluginVersion = "0.0.1";
+    private const string PluginVersion = "1.0.0";
 
     internal static ManualLogSource PluginLogger;
 
