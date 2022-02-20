@@ -1,0 +1,7 @@
+{
+    "name": "GoatSigilAlwaysBoneLord",
+    "version_number": "0.0.1",
+    "website_url": "https://github.com/fmpreferences/goatsigilfix",
+    "description": "Three blood sigil always gives the 8 bone bone lord boon on the remove card event.",
+    "dependencies": []
+}

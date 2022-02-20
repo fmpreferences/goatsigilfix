@@ -3,7 +3,7 @@ using BepInEx.Logging;
 using DiskCardGame;
 using HarmonyLib;
 
-namespace GoatSigilAlways4Bones;
+namespace GoatSigilAlwaysBoneLord;
 
 [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
 public class GoatSigilFix : BaseUnityPlugin
